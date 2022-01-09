@@ -11,48 +11,48 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
-    
+
     # load messages dataset
     messages = pd.read_csv(messages_filepath)
-    
+
     # load categories dataset
     categories = pd.read_csv(categories_filepath)
-    
+
     # merge datasets
-    df = messages.merge(categories, on = 'id')
-    
+    df = messages.merge(categories, how ='left', on = 'id')
+
     return df
-    
+
 def clean_data(df):
-    
+
     # create a dataframe of the 36 individual category columns
     categories = df['categories'].str.split(";", expand = True)
-    
+
     # re-assigning headers from the first row
     categories.set_axis(list(categories.iloc[0].str.split("-").str[0]), axis = 1, inplace = True)
-    
+
     # Convert category values to just numbers 0 or 1
-    
+
     for column in list(categories.columns):
     # set each value to be the last character of the string
         categories[column] = pd.Series(categories[column].str.split("-").str[1])
 
     # Replace categories column in df with new category columns
     df = df.drop(columns=['categories'])
-    
+
     # concatenate the original dataframe with the new `categories` dataframe
     df = pd.concat([df, categories], axis=1)
-    
+
     # remove duplicates
     df = df.drop_duplicates()
-    
+
     return df
 
 
 def save_data(df, database_filename):
     engine = create_engine('sqlite:///' + database_filename )
     df.to_sql('TweetsDatabase', engine, index=False, if_exists='replace')
-    
+
 
 def main():
     if len(sys.argv) == 4:
@@ -65,12 +65,12 @@ def main():
 
         print('Cleaning data...')
         df = clean_data(df)
-        
+
         print('Saving data...\n    DATABASE: {}'.format(database_filepath))
         save_data(df, database_filepath)
-        
+
         print('Cleaned data saved to database!')
-    
+
     else:
         print('Please provide the filepaths of the messages and categories '\
               'datasets as the first and second argument respectively, as '\
