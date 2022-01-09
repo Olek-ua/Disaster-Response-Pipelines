@@ -77,8 +77,10 @@ database and csv files used for training the model. You would mostly use this fo
 Prediction results are vary depending on a feature. Looking into F1 score as
 balanced metric between precision and recall we can clearly see that there is a lot space for improvement.
 
+Model statistics:
 ![Model results](https://github.com/Olek-ua/Disaster-Response-Pipelines/blob/test/screenshots/Attributes%20statistics%20-%20SVC%20Classifier.png)
 
+Confusion matrix:
 ![Confusion matrix](https://github.com/Olek-ua/Disaster-Response-Pipelines/blob/test/screenshots/Disaster_Response_Confusion_Matrix_Results.png)
 
 The key reasons why results are not completely satisfactory:
