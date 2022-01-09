@@ -1,12 +1,12 @@
 # Disaster Response Pipeline Project
 
 ## Table of Contents
-1. [Installation]
-2. [Project Motivation]
-3. [Folder & Files Descriptions]
-4. [Instructions]
-5. [Results]
-6. [Licensing, Authors, and Acknowledgements]
+1. [Installation](https://github.com/Olek-ua/Disaster-Response-Pipelines/tree/test#installations)
+2. [Project Motivation](https://github.com/Olek-ua/Disaster-Response-Pipelines/tree/test#project-motivation)
+3. [Folder & Files Descriptions](https://github.com/Olek-ua/Disaster-Response-Pipelines/tree/test#folder--files-descriptions)
+4. [Instructions](https://github.com/Olek-ua/Disaster-Response-Pipelines/tree/test#instructions)
+5. [Results](https://github.com/Olek-ua/Disaster-Response-Pipelines/tree/test#results)
+6. [Licensing, Authors, and Acknowledgements](https://github.com/Olek-ua/Disaster-Response-Pipelines/tree/test#Licensing,-Authors,-and-Acknowledgement)
 
 ## Installations
 You would need to install some of the standard libraries:
@@ -77,6 +77,10 @@ database and csv files used for training the model. You would mostly use this fo
 Prediction results are vary depending on a feature. Looking into F1 score as
 balanced metric between precision and recall we can clearly see that there is a lot space for improvement.
 
+![Model results](https://github.com/Olek-ua/Disaster-Response-Pipelines/blob/test/screenshots/Attributes%20statistics%20-%20SVC%20Classifier.png)
+
+![Confusion matrix](https://github.com/Olek-ua/Disaster-Response-Pipelines/blob/test/screenshots/Disaster_Response_Confusion_Matrix_Results.png)
+
 The key reasons why results are not completely satisfactory:
 
 - Imbalanced data set
@@ -85,3 +89,7 @@ The key reasons why results are not completely satisfactory:
 since we are dealing with multi-label classification problem
 this is technically very challenging.
  - We can increase the test size, but this may lead to overfitting. However combined with proper cross validation may bring better results.
+
+## Licensing, Authors, and Acknowledgements:
+
+The content of this repository is licensed under a [Creative Commons Attribution License](https://creativecommons.org/licenses/by/3.0/us/)
