@@ -27,7 +27,10 @@ def tokenize(text):
     return clean_tokens
 
 # load data
-engine = create_engine('sqlite:///../data/DisasterResponse.db')
+# engine = create_engine('sqlite:///../data/DisasterResponse.db')
+
+engine = create_engine('sqlite:///{}'.format('DisasterResponse.db'))
+
 df = pd.read_sql_table('TweetsDatabase', engine)
 
 # load model

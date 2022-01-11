@@ -59,7 +59,7 @@ for ML Pipeline preparation and testing.
 database and csv files used for training the model. You would mostly use this folder.
 
 ## Instructions:
-0. Clone the repository `$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`
+0. Clone the repository `$ git clone https://github.com/Olek-ua/Disaster-Response-Pipelines`
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
