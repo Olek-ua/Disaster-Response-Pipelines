@@ -26,10 +26,18 @@ def tokenize(text):
 
     return clean_tokens
 
-# load data
-# engine = create_engine('sqlite:///../data/DisasterResponse.db')
+import os
+import re
 
-engine = create_engine('sqlite:///{}'.format('DisasterResponse.db'))
+print(re.sub('\/app$', '', os.path.abspath('.'))) 
+
+
+# load data
+
+engine = create_engine('sqlite:///../data/DisasterResponse.db')
+
+# works 
+# engine = create_engine('sqlite:////' + re.sub('\/app$', '', os.path.abspath('.')) + '/data/DisasterResponse.db')
 
 df = pd.read_sql_table('TweetsDatabase', engine)
 
