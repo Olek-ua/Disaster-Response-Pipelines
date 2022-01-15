@@ -47,6 +47,9 @@ In this project we aim to process great amount of messages from Twitter to ident
 those related to various disasters. This will help us to filter down to the most relevant ones to prioritise response. A tool like this can be used by
 emergency services for monitoring messages online.
 
+Overview of Training Dataset:
+![Training Dataset](https://github.com/Olek-ua/Disaster-Response-Pipelines/blob/test/screenshots/Overview%20of%20Training%20Data%20Set.png)
+
 To achieve our target we will pre-process messages by using bag-of-words method and feeding its results into
 the model which brings us the highest accuracy and F1 score.
 
