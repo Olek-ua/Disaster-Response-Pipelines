@@ -48,7 +48,8 @@ those related to various disasters. This will help us to filter down to the most
 emergency services for monitoring messages online.
 
 Overview of Training Dataset:
-![Training Dataset](https://github.com/Olek-ua/Disaster-Response-Pipelines/blob/test/screenshots/Overview%20of%20Training%20Data%20Set.png)
+![Training Dataset](https://github.com/Olek-ua/Disaster-Response-Pipelines/blob/master/screenshots/Overview%20of%20Training%20Data%20Set.png)
+
 
 To achieve our target we will pre-process messages by using bag-of-words method and feeding its results into
 the model which brings us the highest accuracy and F1 score.
@@ -81,10 +82,10 @@ Prediction results are vary depending on a feature. Looking into F1 score as
 balanced metric between precision and recall we can clearly see that there is a lot space for improvement.
 
 Model statistics:
-![Model results](https://github.com/Olek-ua/Disaster-Response-Pipelines/blob/test/screenshots/Attributes%20statistics%20-%20SVC%20Classifier.png)
+![Model results](https://github.com/Olek-ua/Disaster-Response-Pipelines/blob/master/screenshots/Attributes%20statistics%20-%20SVC%20Classifier.png)
 
 Confusion matrix:
-![Confusion matrix](https://github.com/Olek-ua/Disaster-Response-Pipelines/blob/test/screenshots/Disaster_Response_Confusion_Matrix_Results.png)
+![Confusion matrix](https://github.com/Olek-ua/Disaster-Response-Pipelines/master/test/screenshots/Disaster_Response_Confusion_Matrix_Results.png)
 
 The key reasons why results are not completely satisfactory:
 
