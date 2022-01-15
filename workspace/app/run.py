@@ -29,17 +29,20 @@ def tokenize(text):
 import os
 import re
 
-print(re.sub('\/app$', '', os.path.abspath('.'))) 
+print(re.sub('\/app$', '', os.path.abspath('.')))
 
 
 # load data
 
 engine = create_engine('sqlite:///../data/DisasterResponse.db')
 
-# works 
+# works
 # engine = create_engine('sqlite:////' + re.sub('\/app$', '', os.path.abspath('.')) + '/data/DisasterResponse.db')
 
 df = pd.read_sql_table('TweetsDatabase', engine)
+
+
+genre_counts = df.groupby('genre').count()['message']
 
 # load model
 model = joblib.load("../models/classifier.pkl")
@@ -54,6 +57,14 @@ def index():
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
+
+
+    d = {'Count':df.drop(['id','message','original','genre'], axis=1).astype(int).sum()}
+    top_5_classes = pd.DataFrame(data = d).sort_values(by=['Count'], ascending=False).head(5)['Count']
+    top_5_classes_names  = list(top_5_classes.index)
+
+    all_classes = pd.DataFrame(data = d).sort_values(by=['Count'], ascending=False)['Count']
+    all_classes_names  = list(all_classes.index)
 
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
@@ -75,6 +86,64 @@ def index():
                     'title': "Genre"
                 }
             }
+        },
+        {
+            'data': [
+                Bar(
+                    x=top_5_classes_names,
+                    y=top_5_classes
+                )
+            ],
+
+            'layout': {
+                'title': 'Top 5 Messages Classes',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Classes"
+                }
+            }
+        },
+        {
+          "data": [
+            {
+              "uid": "f4de1f",
+              "hole": 0.1,
+              "name": "Class",
+              "pull": 0,
+              "type": "pie",
+              "domain": {
+                "x": [
+                  0,
+                  1
+                ],
+                "y": [
+                  0,
+                  1
+                ]
+              },
+              "marker": {
+                "colors": [
+                  "#7fc97f",
+                  "#beaed4",
+                  "#fdc086",
+                  "#ffff99",
+                  "#386cb0"
+                ]
+              },
+              "textinfo": "percent",
+              "hoverinfo": "label+text+value",
+              "labels": all_classes_names,
+              "values": all_classes,
+            }
+          ],
+          "layout": {
+            "title": "Classes Shares",
+            "width": 1000,
+            "height": 800,
+          },
+          "frames": []
         }
     ]
 
