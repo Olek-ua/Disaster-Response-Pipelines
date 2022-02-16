@@ -6,8 +6,8 @@
 3. [Folder & Files Descriptions](https://github.com/Olek-ua/Disaster-Response-Pipelines/tree/test#folder--files-descriptions)
 4. [Instructions](https://github.com/Olek-ua/Disaster-Response-Pipelines/tree/test#instructions)
 5. [Results](https://github.com/Olek-ua/Disaster-Response-Pipelines/tree/test#results)
-6. [Licensing, Authors, and Acknowledgements](https://github.com/Olek-ua/Disaster-Response-Pipelines/tree/test#Licensing,-Authors,-and-Acknowledgement)
-
+6. [Useful Articles](https://github.com/Olek-ua/Disaster-Response-Pipelines/tree/test#Useful-Articles)
+7. [Licensing, Authors, and Acknowledgements](https://github.com/Olek-ua/Disaster-Response-Pipelines/tree/test#Licensing,-Authors,-and-Acknowledgement)
 ## Installations
 You would need to install some of the standard libraries:
 
@@ -95,6 +95,10 @@ The key reasons why results are not completely satisfactory:
 since we are dealing with multi-label classification problem
 this is technically very challenging.
  - We can increase the test size, but this may lead to overfitting. However combined with proper cross validation may bring better results.
+
+## Useful Articles:
+Feature extraction from text using CountVectorizer & TfidfVectorizer:
+![CountVectorizer TfidfVectorizer](https://thepoints.medium.com/feature-extraction-from-text-using-countvectorizer-tfidfvectorizer-9f74f38f86cc)
 
 ## Licensing, Authors, and Acknowledgements:
 
