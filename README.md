@@ -98,7 +98,7 @@ this is technically very challenging.
 
 ## Useful Articles:
 Feature extraction from text using CountVectorizer & TfidfVectorizer:
-![CountVectorizer TfidfVectorizer](https://thepoints.medium.com/feature-extraction-from-text-using-countvectorizer-tfidfvectorizer-9f74f38f86cc)
+[CountVectorizer TfidfVectorizer](https://thepoints.medium.com/feature-extraction-from-text-using-countvectorizer-tfidfvectorizer-9f74f38f86cc)
 
 ## Licensing, Authors, and Acknowledgements:
 
